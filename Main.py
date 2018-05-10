@@ -2,7 +2,7 @@ import os
 import xlwt
 import lib
 from lib.settings import *
-from lib.FormatSpreadSheet import *
+from lib.FormatSheet import *
 from lib.PopulateSheet import *
 
 if not os.path.exists('Excel/'):
