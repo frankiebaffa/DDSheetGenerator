@@ -58,6 +58,4 @@ def CreateNew():
 
     PopulateSheet.initSheet(settings.book, settings.sheet)
 
-    PopulateSheet.fillSheet(settings.book, settings.sheet)
-
     settings.book.save('Excel/' + bookName + '.xls')
