@@ -6,3 +6,11 @@ def init():
 
     global sheet
     sheet = book.add_sheet("Sheet 1", cell_overwrite_ok=True)
+
+    global classlist
+    classlist = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter',
+        'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Wizard']
+
+    global racelist
+    racelist = ['Human', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Half-Orc',
+        'Halfling']
