@@ -1,5 +1,6 @@
 #import settings
 import xlwt
+import sqlite3
 
 def initSheet(book, sheet):
     write = sheet.write
@@ -207,3 +208,24 @@ def initSheet(book, sheet):
     for i in range(4, 59, 6):
         write(i, 36, "{}".format(x), style=bold)
         x += 1
+
+def fillSheet(book, sheet):
+    conn = sqlite3.connect('db/DungeonPy.db')
+    c = conn.cursor()
+    ex = c.execute
+
+    write = sheet.write
+    boldon = "font: bold on"
+    boldcenteron = "font: bold on; align: horiz center"
+    bold = xlwt.easyxf(boldon)
+    boldcenterbigon = "font: bold on, height 220; align: horiz center"
+    boldcenterbig = xlwt.easyxf(boldcenterbigon)
+    boldcenter = xlwt.easyxf(boldcenteron)
+    centeron = "align: horiz center"
+    center = xlwt.easyxf(centeron)
+    fonton = "font: name Arial, height 200"
+    font = xlwt.easyxf(fonton)
+    id = str(character.id)
+    ex('SELECT Name FROM characters WHERE ID=?', id)
+    name = c.fetchone()
+    write(0, 1, '{}'.format(name))
