@@ -63,6 +63,7 @@ def initSheet(book, sheet):
         y += 1
 
     write(9, 10, "Speed", style = bold)
+    write(9, 11, "Init", style = bold)
     write(9, 19, "Check", style = bold)
     write(9, 20, "Spell", style = bold)
     write(9, 21, "Speed", style = bold)
