@@ -3,11 +3,9 @@ import os
 import xlwt
 import lib
 import classes
-import db
 from lib import settings
 from lib import FormatSheet
 from lib import PopulateSheet
-from db import Database
 from classes import CharacterClass
 import lib
 from lib import settings

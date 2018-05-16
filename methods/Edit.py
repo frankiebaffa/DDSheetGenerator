@@ -117,7 +117,7 @@ def AddInventory(character):
 def EditSkills(character):
     allSkills = character.characterclass.skills.__dict__.keys()
     allSkillsList = list(allSkills)
-
+    skillPick = None
     skill = input('Enter the skill you wish to change:  ')
 
     skillCheck = False

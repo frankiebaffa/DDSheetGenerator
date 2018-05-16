@@ -2,7 +2,6 @@ import os
 import xlwt
 import lib
 import classes
-import db
 import methods
 from methods import Create
 from methods import View
@@ -10,7 +9,6 @@ from methods import Edit
 from lib import settings
 from lib import FormatSheet
 from lib import PopulateSheet
-from db import Database
 from classes import CharacterClass
 import pickle
 
@@ -20,7 +18,6 @@ if not os.path.exists('Characters/'):
     os.makedirs('Characters/')
 
 settings.init()
-Database.dbInit()
 
 def LoadCharacter():
     characterName = input("Which character do you want to load?")
@@ -79,5 +76,4 @@ while progrun == True:
     elif action == 8:
         print('')
         print('Exiting...')
-        Database.dbClose()
         progrun = False
