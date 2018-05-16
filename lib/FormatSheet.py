@@ -61,7 +61,7 @@ def initFormat(book, sheet):
 
     merge(11, 12, 10, 10)
 
-    merge(9, 12, 11, 11)
+    merge(11, 12, 11, 11)
 
     #   (6, 9) : (6, 15)
     merge(9, 15, 6, 6)
