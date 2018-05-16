@@ -1,3 +1,4 @@
+import pickle
 import os
 import xlwt
 import lib
@@ -8,6 +9,8 @@ from lib import FormatSheet
 from lib import PopulateSheet
 from db import Database
 from classes import CharacterClass
+import lib
+from lib import settings
 
 def CreateNew():
     bookName = 'test'
@@ -52,10 +55,7 @@ def CreateNew():
     character = CharacterClass.Character(characterName, characterClass, player,
         race, classlist, racelist)
 
-    Database.dbAddNew(character)
-
-    FormatSheet.initFormat(settings.book, settings.sheet)
-
-    PopulateSheet.initSheet(settings.book, settings.sheet)
-
-    settings.book.save('Excel/' + bookName + '.xls')
+    file = 'Characters/' + character.name
+    object = open(file, 'wb')
+    pickle.dump(character, object)
+    object.close()
